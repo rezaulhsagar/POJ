@@ -96,6 +96,6 @@ int main(){
             cout<<" "<<i.second<<endl;
         }
     }
-    if(!print) cout<<"No duplicates."<<endl;
+    if(!print) cout<< "No duplicates." <<endl;
     return 0;
 }
