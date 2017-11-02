@@ -62,40 +62,40 @@ char change(char ch){
 }
 
 string parse(string s){
-	string ret = "";
-	for(int i=0;i<s.size();i++){
-		if(isdigit(s[i])) ret += s[i];
-		else if(isalpha(s[i])) ret += change(s[i]);
-	}
-	return ret;
+    string ret = "";
+    for(int i=0;i<s.size();i++){
+        if(isdigit(s[i])) ret += s[i];
+        else if(isalpha(s[i])) ret += change(s[i]);
+    }
+    return ret;
 }
 
 map <string,int> m;
 
 int main(){
 //    filein;
-	int t;
-	input(t);
-	for(int i=0;i<t;i++){
-		string s;
-		cin>>s;
-		m[parse(s)]++;
-	}
-	bool print = false;
-	for(map <string,int> :: iterator it = m.begin();it != m.end();it++){
-		pair <string,int> i = *it;
+    int t;
+    input(t);
+    for(int i=0;i<t;i++){
+        string s;
+        cin>>s;
+        m[parse(s)]++;
+    }
+    bool print = false;
+    for(map <string,int> :: iterator it = m.begin();it != m.end();it++){
+        pair <string,int> i = *it;
         if(i.second > 1){
-			print = true;
+            print = true;
             for(int j=0;j<3;j++){
-				cout<<i.first[j];
+                cout<<i.first[j];
             }
             cout<<"-";
             for(int j=3;j<i.first.size();j++){
-				cout<<i.first[j];
+                cout<<i.first[j];
             }
             cout<<" "<<i.second<<endl;
         }
-	}
-	if(!print) cout<<"No duplicates."<<endl;
+    }
+    if(!print) cout<<"No duplicates."<<endl;
     return 0;
 }
